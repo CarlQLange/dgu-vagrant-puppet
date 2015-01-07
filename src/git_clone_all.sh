@@ -75,7 +75,7 @@ cd ckanext-importlib
 git checkout master
 cd -
 
-git clone	git@github.com:datagovuk/shared_dguk_assets
+git clone	git@github.com:datagovuk/dgu-joint-assets ./shared_dguk_assets
 cd shared_dguk_assets
 git checkout master
 cd -
