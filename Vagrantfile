@@ -14,6 +14,9 @@ Vagrant.configure("2") do |config|
         "pgpasswd" => "pass",
       }
   end
+  config.vm.provision :shell,
+    :inline => "chown www-data:www-data /var/ckan/wsgi_app.py && chown -R www-data:www-data /home/co/ckan"
+  # above just a cheat to prevent issue #58. Should do this in puppet in future
 
   # Allow local machines to view the VM
   config.vm.network "private_network", ip: "192.168.11.11"
