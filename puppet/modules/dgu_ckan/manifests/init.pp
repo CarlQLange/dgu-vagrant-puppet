@@ -503,9 +503,7 @@ class dgu_ckan {
     notify  => Exec['a2ensite ckan.conf'],
   }
   file {$ckan_wsgi_script:
-    content => template('dgu_ckan/wsgi_app.py.erb'),
-    owner   => 'www-data',
-    group   => 'www-data'
+    content => template('dgu_ckan/wsgi_app.py.erb')
   }
   exec {'a2ensite ckan.conf':
     require   => [
